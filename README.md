@@ -1,123 +1,152 @@
 # Developers Guide to HIPAA Compliance
-=================================
 
-Version 1.0
+## Notes
+
+This is a fork of a Version 1.0 of a TrueVault repo. I found it to be a very concise introduction to HIPAA compliance.
+
+Resources.md was added as a guide to other HIPAA resources. See section 00 of the TOC.
+
+-- eli@tnlabs.ca July 21, 2017
 
 ## About
 
-This guide is designed to provide developers with a solid understanding of HIPAA guidelines and their implications for application development. 
+This guide is designed to provide developers with a solid understanding of HIPAA guidelines and their implications for application development.
 
-HIPAA was originally written in 1996, well in advance of the consumer Internet and a decade ahead of the first iPhone. Therefore, many of the rules and provisions deal with security and privacy issues from a world that didn't have a notion of apps, smartphones, and wearables. And while it's been amended to address privacy and security for the web, the complexity and wide-sweeping nature of the law makes teasing out the exact details to ensure compliance a bit cumbersome. 
+HIPAA was originally written in 1996, well in advance of the consumer Internet and a decade ahead of the first iPhone. Therefore, many of the rules and provisions deal with security and privacy issues from a world that didn't have a notion of apps, smartphones, and wearables. And while it's been amended to address privacy and security for the web, the complexity and wide-sweeping nature of the law makes teasing out the exact details to ensure compliance a bit cumbersome.
 
-Further, unlike PCI, there is no certification entity that can provide developers a rubber stamp of compliance approval. It's up to developers and companies alike to ensure compliance requirements are implemented properly. 
+Further, unlike PCI, there is no certification entity that can provide developers a rubber stamp of compliance approval. It's up to developers and companies alike to ensure compliance requirements are implemented properly.
 
 This guide will give you enough information to give you a strong understanding of HIPAA without getting bogged down in the legalese. We've tried to keep it straight forward, written in plain language.
 
-[Read the Introduction](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md)
+[Read the Introduction](Introduction.md)
 
 ## Table of Contents
-01 — [Introduction](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md)
-+ [2013 Final Omnibus Rule Update](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md#2013-final-omnibus-rule-update)
-+ [Why this guide?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md#why-this-guide)
-+ [Who is this guide for?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md#who-is-this-guide-for)
-+ [Build on our work](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md#build-on-our-work)
-+ [Questions/Feedback](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md#questionsfeedback)
-+ [Mandatory Disclaimer](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/01%20Introduction.md#mandatory-disclaimer)
+00 — [Resources](00-Resources.md)
++ [US gov](00-Resources.md#usgov)
+  + [Health and Human Services (hhs.gov)](00-Resources.md#hhs)
+  + [National Institute of Standard and Technology (nist.gov)](00-Resources.md#nist)
++ [Cloud Providers](00-Resources.md#cloud)
+  + [AWS](00-Resources.md#aws)
+  + [Heroku](00-Resources.md#heroku)
+  + [SumoLogic](00-Resources.md#sumo)
+  + [TrueVault](00-Resources.md#tv)
++ [Messaging Providers](00-Resources.md#msg)
++ [Articles](00-Resources.md#articles)
+  + [Enforcement](00-Resources.md#enforcement)
+  + [Logging](00-Resources.md#logging)
+  + [SMS](00-Resources.md#sms)
++ [Videos](00-Resources.md#vids)
 
-02 — [What is HIPAA?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md)
-+ [Background](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#background)
-+ [2013 Final Omnibus Rule Update](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#2013-final-omnibus-rule-update)
-+ [The Four Rules of HIPAA](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#the-four-rules-of-hipaa)
-+ [Important Terms to Know](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#important-terms-to-know)
-  + [Protected Health Information](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#protected-health-information-phi)
-  + [The Difference Between PHI and Consumer Health Information](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#the-difference-between-protected-health-information-and-consumer-health-information)
-  + [Covered Entity](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#covered-entity)
-  + [Business Associate](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#business-associate)
-  + [No Safe Harbor Clause](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/02%20What%20is%20HIPAA%3F.md#no-safe-harbor-clause)
 
-03 — [Do I Need to Be HIPAA Compliant?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/03%20Do%20I%20Need%20to%20Be%20HIPAA%20Compliant%3F.md)
-+ [Who Needs to Be HIPAA Compliant?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/03%20Do%20I%20Need%20to%20Be%20HIPAA%20Compliant%3F.md#who-needs-to-be-hipaa-compliant)
+01 — [Introduction](01-Introduction.md)
++ [2013 Final Omnibus Rule Update](01-Introduction.md#2013-final-omnibus-rule-update)
++ [Why this guide?](01-Introduction.md#why-this-guide)
++ [Who is this guide for?](01-Introduction.md#who-is-this-guide-for)
++ [Build on our work](01-Introduction.md#build-on-our-work)
++ [Questions/Feedback](01-Introduction.md#questionsfeedback)
++ [Mandatory Disclaimer](01-Introduction.md#mandatory-disclaimer)
 
-04 — [HIPAA Security Rule](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md)
-+ [3 Parts to the HIPAA Security Rule](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#3-parts-to-the-hipaa-security-rule)
-  + [Administrative Safeguards](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#administrative-safeguards)
-  + [Technical Safeguards](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#technical-safeguards)
-    + [Access Control Safeguards](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#access-control-requirements)
-    + [Transmission Security](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#transmission-security)
-    + [Audit and Integrity](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#audit-and-integrity)
-  + [Physical Safeguards](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#physical-safeguards)
-    + [Facility Access Controls](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#facility-access-controls)
-    + [Device and Media Controls](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#device-and-media-controls)
-    + [Workstation Security](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#workstation-security)
-+ [Required vs. Addressable Specifications](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/04%20HIPAA%20Security%20Rule.md#required-vs-addressable-specifications)
+02 — [What is HIPAA?](02-WhatIsHIPAA.md)
++ [Background](02-WhatIsHIPAA.mdbackground)
++ [2013 Final Omnibus Rule Update](02-WhatIsHIPAA.md#2013-final-omnibus-rule-update)
++ [The Four Rules of HIPAA](02-WhatIsHIPAA.md#the-four-rules-of-hipaa)
++ [Important Terms to Know](02-WhatIsHIPAA.md#important-terms-to-know)
+  + [Protected Health Information](02-WhatIsHIPAA.md#protected-health-information-phi)
+  + [The Difference Between PHI and Consumer Health Information](02-WhatIsHIPAA.md#the-difference-between-protected-health-information-and-consumer-health-information)
+  + [Covered Entity](02-WhatIsHIPAA.md#covered-entity)
+  + [Business Associate](02-WhatIsHIPAA.md#business-associate)
+  + [No Safe Harbor Clause](02-WhatIsHIPAA.md#no-safe-harbor-clause)
 
-05 — [Becoming HIPAA Compliant](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/05%20Becoming%20HIPAA%20Compliant.md)
-+ [What Does HIPAA Require](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/05%20Becoming%20HIPAA%20Compliant.md#what-does-hipaa-require)
-+ [What it Means for Developers](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/05%20Becoming%20HIPAA%20Compliant.md#what-it-means-for-developers)
-+ [If We're Being Honest](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/05%20Becoming%20HIPAA%20Compliant.md#if-were-being-honest)
+03 — [Do I Need to Be HIPAA Compliant?](03-DoINeedToBeHIPAACompliant.md)
++ [Who Needs to Be HIPAA Compliant?](03-DoINeedToBeHIPAACompliant.md#who-needs-to-be-hipaa-compliant)
 
-06 — [Who Certifies HIPAA Compliance](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/06%20Who%20Certifies%20HIPAA%20Compliance%3F.md)
-+ [The Short Answer](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/06%20Who%20Certifies%20HIPAA%20Compliance%3F.md#the-short-answer-is-no-one)
-+ [But Texas](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/06%20Who%20Certifies%20HIPAA%20Compliance%3F.md#but-texas)
+04 — [HIPAA Security Rule](04-HIPAASecurityRule.md)
++ [3 Parts to the HIPAA Security Rule](04-HIPAASecurityRule.md#3-parts-to-the-hipaa-security-rule)
+  + [Administrative Safeguards](04-HIPAASecurityRule.md#administrative-safeguards)
+  + [Technical Safeguards](04-HIPAASecurityRule.md#technical-safeguards)
+    + [Access Control Safeguards](04-HIPAASecurityRule.md#access-control-requirements)
+    + [Transmission Security](04-HIPAASecurityRule.md#transmission-security)
+    + [Audit and Integrity](04-HIPAASecurityRule.md#audit-and-integrity)
+  + [Physical Safeguards](04-HIPAASecurityRule.md#physical-safeguards)
+    + [Facility Access Controls](04-HIPAASecurityRule.md#facility-access-controls)
+    + [Device and Media Controls](04-HIPAASecurityRule.md#device-and-media-controls)
+    + [Workstation Security](04-HIPAASecurityRule.md#workstation-security)
++ [Required vs. Addressable Specifications](04-HIPAASecurityRule.md#required-vs-addressable-specifications)
 
-07 — [HIPAA Fines](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/07%20HIPAA%20Fines.md)
-+ [Unencrypted Data](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/07%20HIPAA%20Fines.md#unencrypted-data)
-+ [Employee Error](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/07%20HIPAA%20Fines.md#employee-error)
-+ [Data Stored on Devices](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/07%20HIPAA%20Fines.md#data-stored-on-devices)
-+ [Business Associates](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/07%20HIPAA%20Fines.md#business-associates)
+05 — [Becoming HIPAA Compliant](05-BecomingHIPAACompliant.md)
++ [What Does HIPAA Require](05-BecomingHIPAACompliant.md#what-does-hipaa-require)
++ [What it Means for Developers](05-BecomingHIPAACompliant.md#what-it-means-for-developers)
++ [If We're Being Honest](05-BecomingHIPAACompliant.md#if-were-being-honest)
 
-08 — [Developer Considerations](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md)
-+ [Build vs. Buy](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#build-vs-buy)
-+ [Unintended Use Cases](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#unintended-use-cases)
-+ [HIPAA Hosting and Compliance](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#hipaa-hosting-and-compliance)
-  + [Does Using HIPAA Hosting Make My Application HIPAA Compliant?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#does-using-hipaa-hosting-make-my-application-hipaa-compliant)
-  + [What Data Should Be Stored in HIPAA Compliant Hosting Environments?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#what-data-should-be-stored-in-hipaa-compliant-hosting-environments)
-  + [What Makes a Hosting Environment HIPAA Compliant?](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#what-makes-a-hosting-environment-hipaa-compliant)
-  + [Network and Application Security](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#network-and-application-security)
-  + [High-Availability and Redundancy](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#high-availability-and-redundancy)
-  + [Required vs. Addressable HIPAA Implementation Specifications](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/08%20Developer%20Considerations.md#required-vs-addressable-hipaa-implementation-specifications)
+06 — [Who Certifies HIPAA Compliance](06-WhoCertifiesHIPAACompliance.md)
++ [The Short Answer](06-WhoCertifiesHIPAACompliance.md#the-short-answer-is-no-one)
++ [But Texas](06-WhoCertifiesHIPAACompliance.md#but-texas)
 
-09 — [Mobile Applications](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md)
-+ [Use Cases](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#use-cases)
-+ [PHI in the Application](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#phi-in-the-application)
-+ [User Communication](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#user-communication)
-  + [Email](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#email)
-  + [Database/API Calls](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#databaseapi-calls)
-+ [Push Notifications](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#push-notifications)
-+ [Physical Phone Security](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#physical-phone-security)
-  + [Using the Lock Screen](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#using-the-lock-screen)
-  + [Enabling Remote Wiping of Lost Phones](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/09%20Mobile%20Applications.md#enabling-remote-wiping-of-lost-phones)
+07 — [HIPAA Fines](07-HIPAAFines.md)
++ [Unencrypted Data](07-HIPAAFines.md#unencrypted-data)
++ [Employee Error](07-HIPAAFines.md#employee-error)
++ [Data Stored on Devices](07-HIPAAFines.md#data-stored-on-devices)
++ [Business Associates](07-HIPAAFines.md#business-associates)
 
-10 — [Wearable Applications](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md)
-+ [Considerations for Wearables](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md#considerations-for-wearables)
-  + [Alerts and Notifications](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md#alerts-and-notifications)
-  + [Default Displays](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md#default-displays)
-  + [APIs and Data Sharing](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md#apis-and-data-sharing)
-  + [Medical Devices](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md#medical-devices)
-  + [Data Encryption](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md#data-encryption)
-  + [Data Synching](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/10%20Wearable%20Applications.md#data-synching)
+08 — [Developer Considerations](08-DeveloperConsiderations.md)
++ [Build vs. Buy](08-DeveloperConsiderations.md#build-vs-buy)
++ [Unintended Use Cases](08-DeveloperConsiderations.md#unintended-use-cases)
++ [HIPAA Hosting and Compliance](08-DeveloperConsiderations.md#hipaa-hosting-and-compliance)
+  + [Does Using HIPAA Hosting Make My Application HIPAA Compliant?](08-DeveloperConsiderations.md#does-using-hipaa-hosting-make-my-application-hipaa-compliant)
+  + [What Data Should Be Stored in HIPAA Compliant Hosting Environments?](08-DeveloperConsiderations.md#what-data-should-be-stored-in-hipaa-compliant-hosting-environments)
+  + [What Makes a Hosting Environment HIPAA Compliant?](08-DeveloperConsiderations.md#what-makes-a-hosting-environment-hipaa-compliant)
+  + [Network and Application Security](08-DeveloperConsiderations.md#network-and-application-security)
+  + [High-Availability and Redundancy](08-DeveloperConsiderations.md#high-availability-and-redundancy)
+  + [Required vs. Addressable HIPAA Implementation Specifications](08-DeveloperConsiderations.md#required-vs-addressable-hipaa-implementation-specifications)
 
-11 — [Apple HealthKit and iOS 8](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/11%20Apple%20HealthKit%20and%20iOS%208.md)
-+ [TrueVault iOS 8 SDK](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/11%20Apple%20HealthKit%20and%20iOS%208.md#truevault-ios-8-sdk)
-+ [iOS 8 Health-Related Announcements](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/11%20Apple%20HealthKit%20and%20iOS%208.md#ios-8-health-related-announcements)
-+ [Apple HealthKit Announcements](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/11%20Apple%20HealthKit%20and%20iOS%208.md#apple-healthkit-announcements)
+09 — [Mobile Applications](09-MobileApplications.md)
++ [Use Cases](09-MobileApplications.md#use-cases)
++ [PHI in the Application](09-MobileApplications.md#phi-in-the-application)
++ [User Communication](09-MobileApplications.md#user-communication)
+  + [Email](09-MobileApplications.md#email)
+  + [Database/API Calls](09-MobileApplications.md#databaseapi-calls)
++ [Push Notifications](09-MobileApplications.md#push-notifications)
++ [Physical Phone Security](09-MobileApplications.md#physical-phone-security)
+  + [Using the Lock Screen](09-MobileApplications.md#using-the-lock-screen)
+  + [Enabling Remote Wiping of Lost Phones](09-MobileApplications.md#enabling-remote-wiping-of-lost-phones)
 
-12 — [About TrueVault](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md)
-+ [Built for Developers Like You](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#built-for-developers-like-you)
-+ [HIPAA Compliant](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#hipaa-compliant)
-+ [BAA + Insurance](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#baa--insurance)
-+ [Startups](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#startups)
-+ [Mobile Apps](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#mobile-apps)
-+ [Web Apps](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#web-apps)
-+ [Wearable Health Tech Devices](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#wearable-health-tech-devices)
-+ [Why People Like TrueVault](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#why-people-like-truevault)
-+ [Try TrueVault for Free](https://github.com/truevault/hipaa-compliance-developers-guide/blob/master/12%20About%20TrueVault.md#try-truevault-for-free)
+10 — [Wearable Applications](10-WearableApplications.md)
++ [Considerations for Wearables](10-WearableApplications.md#considerations-for-wearables)
+  + [Alerts and Notifications](10-WearableApplications.md#alerts-and-notifications)
+  + [Default Displays](10-WearableApplications.md#default-displays)
+  + [APIs and Data Sharing](10-WearableApplications.md#apis-and-data-sharing)
+  + [Medical Devices](10-WearableApplications.md#medical-devices)
+  + [Data Encryption](10-WearableApplications.md#data-encryption)
+  + [Data Synching](10-WearableApplications.md#data-synching)
+
+11 — [Apple HealthKit and iOS 8](11-AppleHealthKit_iOS8.md)
++ [TrueVault iOS 8 SDK](11-AppleHealthKit_iOS8.md#truevault-ios-8-sdk)
++ [iOS 8 Health-Related Announcements](11-AppleHealthKit_iOS8.md#ios-8-health-related-announcements)
++ [Apple HealthKit Announcements](11-AppleHealthKit_iOS8.md#apple-healthkit-announcements)
+
+12 — [About TrueVault](12-AboutTrueVault.md)
++ [Built for Developers Like You](12-AboutTrueVault.md#built-for-developers-like-you)
++ [HIPAA Compliant](12-AboutTrueVault.md#hipaa-compliant)
++ [BAA + Insurance](12-AboutTrueVault.md#baa--insurance)
++ [Startups](12-AboutTrueVault.md#startups)
++ [Mobile Apps](12-AboutTrueVault.md#mobile-apps)
++ [Web Apps](12-AboutTrueVault.md#web-apps)
++ [Wearable Health Tech Devices](12-AboutTrueVault.md#wearable-health-tech-devices)
++ [Why People Like TrueVault](12-AboutTrueVault.md#why-people-like-truevault)
++ [Try TrueVault for Free](12-AboutTrueVault.md#try-truevault-for-free)
+
+
+## Conclusion
+
+HIPAA is much more than just encryption. Access control and logging beyond what a standard development environment provides is essential. Everything must be audit ready on demand. Audit compliance and emergency situations should not consume developer time down the road. Developers can't be expected to forsee every legal threat lurking in regulations. Using compliant providers is an investment that should be made at the start of any project. Heroku Shield is a good alternative to dedicated services such as TrueVault for those spinning up their own back end services.
+
+
+---
 
 ## About TrueVault
 
 TrueVault is a HIPAA compliant API and secure data store that makes meeting the technical safeguard requirements of HIPAA easy for developers. Think of us like Stripe, but instead of payments, we make sure your app is checking all the boxes for HIPAA security and privacy. [Learn more](https://www.truevault.com/)
 
-## Disclaimer
+### TrueVault (Original Disclaimer)
 
 We're not lawyers. Nothing in this guide constitutes legal advice. Talk to one if you have specific questions regarding your application and HIPAA compliance.
-
