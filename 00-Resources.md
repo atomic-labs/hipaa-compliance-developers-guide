@@ -66,11 +66,14 @@
 
 ## <a name="articles"></a>Articles
 
-### <a name="enforcement"></a>Enforcement
+### <a name="enforcement"></a>Enforcement & Resolutions
 
 [Understanding HIPAA Enforcement and How to Avoid It](https://www.medstack.co/blog/understanding-hipaa-enforcement-and-how-to-avoid-it)
 
 [No Business Associate Agreement? $31K Mistake](https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/ccdh/index.html)
+
+[UMass 'corrective action': $650,000 resolution](resources/umass_ra_cap.pdf)
+
 
 ### <a name="log"></a>Logging
 

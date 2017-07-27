@@ -32,7 +32,7 @@ This guide will give you enough information to give you a strong understanding o
   + [TrueVault](00-Resources.md#tv)
 + [Messaging Providers](00-Resources.md#msg)
 + [Articles](00-Resources.md#articles)
-  + [Enforcement](00-Resources.md#enforcement)
+  + [Enforcement & Resolutions](00-Resources.md#enforcement)
   + [Logging](00-Resources.md#logging)
   + [SMS](00-Resources.md#sms)
 + [Videos](00-Resources.md#vids)
