@@ -64,7 +64,7 @@
 
 [FAQ](https://sendgrid.com/wp-content/uploads/2016/09/9-16_SendGrid_FAQ_Resellers_Doc.pdf)
 
-## <a name="articles"></a>Articles
+## <a name="articles"></a>Articles & Publications
 
 ### <a name="enforcement"></a>Enforcement & Resolutions
 
@@ -91,6 +91,20 @@
 [To Text or Not To Text: Texting under HIPAA](https://luxsci.com/blog/to-text-or-not-to-text-sending-text-messages-under-hipaa.html)
 
 [Is SMS HIPAA Compliant?](https://www.qliqsoft.com/blog/is-sms-hipaa-compliant/)
+
+### <a name="deid"></a>Data De-Identification
+
+[Data De-Identification - An Easier Way to HIPAA-Compliance](https://www.truevault.com/blog/data-de-identification-an-easier-way-to-hipaa-compliance.html)
+
+[Guidance Regarding Methods for De-identification of PHI](resources/hhs_deid_guidance.pdf)
+
+[Definition of De-Identified Data](http://www.hopkinsmedicine.org/institutional_review_board/hipaa_research/de_identified_data.html)
+
+[How to De-identify Data](resources/HowtoDe-identifyData_LXL_20080307.pdf)
+
+[Data De-identification: An Overview of Basic Terms](resources/data_deidentification_terms.pdf)
+
+[NISTIR 8053 De-Identification of Personal Information](resources/NIST.IR.8053.pdf)
 
 ## <a name="vids"></a>Videos
 

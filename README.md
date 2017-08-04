@@ -31,10 +31,11 @@ This guide will give you enough information to give you a strong understanding o
   + [SumoLogic](00-Resources.md#sumo)
   + [TrueVault](00-Resources.md#tv)
 + [Messaging Providers](00-Resources.md#msg)
-+ [Articles](00-Resources.md#articles)
++ [Articles & Publications](00-Resources.md#articles)
   + [Enforcement & Resolutions](00-Resources.md#enforcement)
   + [Logging](00-Resources.md#logging)
   + [SMS](00-Resources.md#sms)
+  + [Data De-Identification](00-Resources.md#deid)
 + [Videos](00-Resources.md#vids)
 
 
@@ -138,7 +139,7 @@ This guide will give you enough information to give you a strong understanding o
 
 ## Conclusion
 
-HIPAA is much more than just encryption. Access control and logging beyond what a standard development environment provides is essential. Everything must be audit ready on demand. Audit compliance and emergency situations should not consume developer time down the road. Developers can't be expected to forsee every legal threat lurking in regulations. Using compliant providers is an investment that should be made at the start of any project. Heroku Shield is a good alternative to dedicated services such as TrueVault for those spinning up their own back end services.
+HIPAA is much more than just encryption. Access control and logging beyond what a standard development environment provides is essential. Everything must be audit ready on demand. Audit compliance and emergency situations should not consume developer time down the road. Developers can't be expected to forsee every legal threat lurking in regulations. Using compliant providers is an investment that should be made at the start of any project.
 
 
 ---
