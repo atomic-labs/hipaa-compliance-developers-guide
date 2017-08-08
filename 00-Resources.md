@@ -8,6 +8,16 @@
 
 [Newsroom](https://www.hhs.gov/hipaa/newsroom/index.html)
 
+#### <a name="four"></a>4 Rules of HIPAA
+
+[1. Privacy](https://www.hhs.gov/hipaa/for-professionals/privacy/index.html)
+
+[2. Security](https://www.hhs.gov/hipaa/for-professionals/security/guidance/index.html)
+
+[3. Enforcement](https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/index.html)
+
+[4. Breach Notification](https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html)
+
 ### National Institute of Standard and Technology (nist.gov)
 
 [800-66 - An Introductory Resource Guide for Implementing the Health Insurance Portability and Accountability Act (HIPAA) Security Rule](resources/nistspecialpublication800-66r1.pdf)

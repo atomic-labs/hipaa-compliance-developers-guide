@@ -25,6 +25,7 @@ This guide will give you enough information to give you a strong understanding o
 + [US gov](00-Resources.md#usgov)
   + [Health and Human Services (hhs.gov)](00-Resources.md#hhs)
   + [National Institute of Standard and Technology (nist.gov)](00-Resources.md#nist)
+  + [4 Rules of HIPAA](00-Resources.md#four)
 + [Cloud Providers](00-Resources.md#cloud)
   + [AWS](00-Resources.md#aws)
   + [Heroku](00-Resources.md#heroku)
